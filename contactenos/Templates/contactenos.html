@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Demo 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body class="bg-info-subtle">
+    
+    <!-- Barra de navegación -->
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/autores">Autores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/libros">Libros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contactenos">Contactenos</a>
+      </li>
+    </ul>
+
+    <!-- Mensaje principal -->
+    <div class="alert alert-info text-center" role="alert">
+      <h3>{{ titulo }}</h3>
+      <h4>{{ mensaje }}</h4>
+    </div>
+
+    <!-- Lista -->
+    <div class="container">
+      <ol class="list-group list-group-numbered my-4">
+        {% if email %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Email</div>
+            {{ email }}
+          </div>
+        </li>
+        {% endif %}
+        {% if telefono %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Teléfono</div>
+            {{ telefono }}
+          </div>
+        </li>
+        {% endif %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">¿En línea?</div>
+            {% if disponibilidad %}
+              <span class="badge text-bg-success rounded-pill">Disponible</span>
+            {% else %}
+              <span class="badge text-bg-danger rounded-pill">No disponible</span>
+            {% endif %}
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Imagen -->
+    <div class="container">
+      <img src="https://brandslogos.com/wp-content/uploads/images/large/moncler-logo.png" class="rounded mx-auto d-block" alt="Logo" style="width: 400px; height: auto;">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
